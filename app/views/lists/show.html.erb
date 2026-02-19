@@ -3,7 +3,7 @@
   <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary mx-3", role: "button" %>
 </div>
 <div class="cards my-3">
-  <% @bookmarks.each do |bookmark| %>
+  <% @list.bookmarks.each do |bookmark| %>
     <div class="card" style="width: 18rem;">
       <%= image_tag bookmark.movie.poster_url, class: "card-img-top", alt: bookmark.movie.title + " Movie Poster" %>
       <div class="card-body">

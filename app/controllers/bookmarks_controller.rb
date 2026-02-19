@@ -2,11 +2,11 @@ class BookmarksController < ApplicationController
   before_action :set_list, only: [ :new, :create ]
   def new
     @bookmark = Bookmark.new
+    @sorted_movies = Movie.order(title: :asc)
   end
 
   def create
     @bookmark = @list.bookmarks.new(bookmark_params)
-    @bookmark.list = @list
     if @bookmark.save
       redirect_to list_path(@list)
     else
