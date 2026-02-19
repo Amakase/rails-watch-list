@@ -1,13 +1,15 @@
-<h1>All Lists</h1>
-<p><%= link_to "Create a new list", new_list_path %></p>
-<ul class="list-group">
-<% if @lists.empty? %>
-  <li class="list-group-item">No lists yet!</li>
-<% else %>
-  <% @lists.each do |list| %>
-    <li class="list-group-item">
-      <%= link_to list.name, list_path(list) %>
-    </li>
+<div class="d-flex align-items-center">
+  <h1 class="mb-0">All Lists</h1>
+  <%= link_to "New list", new_list_path, class: "btn btn-primary mx-3", role: "button" %>
+</div>
+<div class="cards my-3">
+  <% if @lists.empty? %>
+    <p class="list-group-item">No lists yet!</p>
+  <% else %>
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to list.name, list_path(list), class: "text-light" %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-</ul>
+</div>

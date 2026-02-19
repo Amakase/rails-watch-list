@@ -24,6 +24,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
+      <div class="container-fluid">
+        <%= link_to "Movie Lists Master", lists_path, class: "navbar-brand" %>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
