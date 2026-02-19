@@ -5,7 +5,9 @@
   <li class="list-group-item">No lists yet!</li>
 <% else %>
   <% @lists.each do |list| %>
-    <li class="list-group-item"><%= link_to list.name, list_path(list) %></li>
+    <li class="list-group-item">
+      <%= link_to list.name, list_path(list) %>
+    </li>
   <% end %>
 <% end %>
 </ul>
