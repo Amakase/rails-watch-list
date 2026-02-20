@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center mt-3">
   <h1 class="mb-0">All Lists</h1>
   <%= link_to "New list", new_list_path, class: "btn btn-primary mx-3", role: "button" %>
 </div>
@@ -9,7 +9,11 @@
     <% @lists.each do |list| %>
       <div class="card-product my-3">
         <%= link_to "", list_path(list), class: "card-link" %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if list.photo.attached? %>
+          <%= cl_image_tag list.photo.key, alt: list.name, height: 120, width: 120, crop: :fill %>
+        <% else %>
+          <%= image_tag "coffee.jpg", alt: list.name %>
+        <% end %>
         <div class="card-product-infos">
           <h2><%= list.name %></h2>
         </div>
