@@ -7,16 +7,19 @@
     <p>No lists yet!</p>
   <% else %>
     <% @lists.each do |list| %>
-      <div class="card-product my-3">
-        <%= link_to "", list_path(list), class: "card-link" %>
-        <% if list.photo.attached? %>
-          <%= cl_image_tag list.photo.key, alt: list.name, height: 120, width: 120, crop: :fill %>
-        <% else %>
-          <%= image_tag "coffee.jpg", alt: list.name %>
-        <% end %>
-        <div class="card-product-infos">
-          <h2><%= list.name %></h2>
+      <div class="card-frame d-flex my-3">
+        <div class="card-product flex-grow-1">
+          <%= link_to "", list_path(list), class: "card-link" %>
+          <% if list.photo.attached? %>
+            <%= cl_image_tag list.photo.key, alt: list.name, height: 120, width: 120, crop: :fill %>
+          <% else %>
+            <%= image_tag "coffee.jpg", alt: list.name %>
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%= list.name %></h2>
+          </div>
         </div>
+        <div><%= link_to "Delete", list_path(list), class: "btn btn-danger text-light h-100", role: "button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></div>
       </div>
     <% end %>
   <% end %>

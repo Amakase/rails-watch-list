@@ -7,10 +7,8 @@
 </div>
 <div class="d-flex align-items-center mt-3">
   <h1 class="mb-0"><%= @list.name %></h1>
-  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary mx-3", role: "button" %>
 </div>
-<hr class="border mt-1" />
-<div class="cards my-3">
+<div class="cards my-3 border-top border-bottom">
   <% @list.bookmarks.each do |bookmark| %>
     <div class="card" style="width: 18rem;">
       <%= image_tag bookmark.movie.poster_url, class: "card-img-top", alt: bookmark.movie.title + " Movie Poster" %>
@@ -26,4 +24,14 @@
     </div>
   <% end %>
 </div>
+<div class="border-bottom pb-3">
+  <h4>Add a movie</h4>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, collection: @sorted_movies %>
+    <%= f.input :comment %>
+    <%= f.submit class: "btn btn-primary"%>
+  <% end %>
+</div>
+<div class="d-flex my-3 justify-content-end">
 <%= link_to "Back to All Lists", lists_path, class: "btn btn-primary", role: "button" %>
+</div>
