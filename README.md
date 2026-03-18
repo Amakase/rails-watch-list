@@ -1,24 +1,17 @@
-# README
+# Watch List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple movies watch list built with Ruby on Rails
 
-Things you may want to cover:
+## Getting Started
+### Setup
 
-* Ruby version
+Install gems
+```
+bundle install
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Built With
+- [Rails 8.1](https://guides.rubyonrails.org/) - Back-end / Front-end
+- [Ruby 3.3.5](https://www.ruby-lang.org) - Back-end
+- [SQLite](https://sqlite.org/index.html) - Database
+- [Bootstrap](https://getbootstrap.com/) - Styling
