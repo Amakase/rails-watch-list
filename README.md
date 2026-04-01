@@ -1,6 +1,6 @@
 # Watch List
 
-A simple movies watch list built with Ruby on Rails
+A simple movie watch list built with Ruby on Rails
 
 ## Getting Started
 ### Setup
